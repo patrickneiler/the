@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/accounts/status",
+  "sourceRoot": "libs/feature/accounts/status/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/accounts/status"],
+      "options": {
+        "jestConfig": "libs/feature/accounts/status/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/accounts/status/src/**/*.ts",
+          "libs/feature/accounts/status/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

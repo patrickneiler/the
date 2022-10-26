@@ -1,0 +1,23 @@
+.horizontal {
+  display: flex;
+}
+
+ion-list {
+  border-radius: 20px 20px 0 0;
+  padding-bottom: 24px;
+  ion-list-header {
+    ion-label {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+  }
+  ion-input,
+  ion-text {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .error {
+    font-size: 0.75em !important;
+  }
+}

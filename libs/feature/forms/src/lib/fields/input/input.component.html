@@ -1,0 +1,12 @@
+<ion-item lines="none" color="medium" [formGroup]="group" [style.flexGrow]="field?.attrs?.flex || 1" >
+  <ion-input
+    *ngIf="field?.attrs"
+    [reg]="field?.attrs?.mask"
+    [attr.mask]="field?.attrs?.mask"
+    [formControlName]="field?.name!"
+    [attr.placeholder]="field?.placeholder"
+    [attr.type]="field?.attrs?.type || 'text'"
+    [attr.readonly]="field?.attrs?.readonly || false"
+    [attr.disabled]="field?.attrs?.disabled || false"
+  ></ion-input>
+</ion-item>

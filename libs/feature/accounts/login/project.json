@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/accounts/login",
+  "sourceRoot": "libs/feature/accounts/login/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/accounts/login"],
+      "options": {
+        "jestConfig": "libs/feature/accounts/login/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/accounts/login/src/**/*.ts",
+          "libs/feature/accounts/login/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

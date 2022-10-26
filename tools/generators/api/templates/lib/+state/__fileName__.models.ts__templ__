@@ -1,0 +1,9 @@
+import { CONTENT_TYPE, I<%= className %>, I<%= className %>Fields } from '@the/utility/models';
+
+/**
+ * Interface for the '<%= className %>' data
+ */
+export interface <%= className %>Entity extends I<%= className %> {
+  id: string; // Primary ID
+  features?: CONTENT_TYPE[];
+}

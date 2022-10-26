@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/forms",
+  "sourceRoot": "libs/feature/forms/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/forms"],
+      "options": {
+        "jestConfig": "libs/feature/forms/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/forms/src/**/*.ts",
+          "libs/feature/forms/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/entity/list",
+  "sourceRoot": "libs/feature/entity/list/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/entity/list/src/**/*.ts",
+          "libs/feature/entity/list/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

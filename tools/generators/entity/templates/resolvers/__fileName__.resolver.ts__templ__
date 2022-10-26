@@ -1,0 +1,47 @@
+import { Injectable } from '@angular/core';
+import {
+  Resolve,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot,
+} from '@angular/router';
+import {
+  IFacade,
+  Entity,
+  EntityState,
+  I<%= className %>Fields,
+  State,
+} from '@the/utility/models';
+import { <%= className %>Entity, <%= className %>Facade } from '@the/feature/<%= name %>s/api';
+import { <%= className %>Feature } from '@the/feature/<%= name %>s/api';
+import { Observable, of } from 'rxjs';
+import { Store } from '@ngrx/store';
+
+@Injectable()
+export class <%= className %>Resolver
+  implements
+    Resolve<{
+      name: string;
+      facade: <%= className %>Facade;
+      store: Store<<%= className %>Feature.State>;
+    }>
+{
+  constructor(
+    private facade: <%= className %>Facade,
+    private store: Store<<%= className %>Feature.State>
+  ) {}
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<{
+    name: string;
+    facade: <%= className %>Facade;
+    store: Store<<%= className %>Feature.State>;
+  }> {
+    this.facade.load();
+    return of({
+      name: <%= className %>Feature.<%= constantName %>_FEATURE_KEY,
+      facade: this.facade,
+      store: this.store,
+    });
+  }
+}

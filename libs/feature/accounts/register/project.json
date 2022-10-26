@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/accounts/register",
+  "sourceRoot": "libs/feature/accounts/register/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/accounts/register"],
+      "options": {
+        "jestConfig": "libs/feature/accounts/register/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/accounts/register/src/**/*.ts",
+          "libs/feature/accounts/register/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

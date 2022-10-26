@@ -1,0 +1,6 @@
+<ion-toggle
+  [checked]="(accounts.account$ | async)?.id"
+  [disabled]="disabled"
+  [color]="(accounts.account$ | async)?.id ? 'success' : 'warning'"
+  (ionChange)="toggle($event)"
+></ion-toggle>

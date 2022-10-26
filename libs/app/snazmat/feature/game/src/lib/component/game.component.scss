@@ -1,0 +1,86 @@
+:host {
+  height: 100%;
+  width: 86px;
+  display: flex;
+  position: relative;
+  the-animation {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation-timing-function: step-start;
+    animation-iteration-count: infinite;
+    background-repeat: repeat-x;
+    &.playing {
+      visibility: visible;
+      z-index: 2;
+    }
+  }
+  .jeff {
+    height: 222px;
+    width: 86px;
+    position: relative;
+    .sprite--idle {
+      display: flex;
+    }
+    &:hover {
+      .sprite {
+        display: none;
+      }
+      .sprite--waving {
+        display: flex;
+        top: -111px;
+      }
+    }
+    .sprite--jumping {
+      display: flex;
+      top: -222px;
+    }
+  }
+  @mixin sprite(
+    $name,
+    $sprite-height,
+    $sprite-width,
+    $sprite-cell_count,
+    $animation_duration,
+    $sprite-url
+  ) {
+    .sprite--#{$name} {
+      padding-bottom: percentage(
+        $sprite-height / ($sprite-width/$sprite-cell_count)
+      );
+      background-image: url(#{$sprite-url});
+      background-size: $sprite-cell_count * 100%;
+      transition: transform $animation_duration;
+      background-position: 0% 50%;
+      animation-name: animatedSprite-#{$name};
+      animation-duration: $animation_duration;
+    }
+    @keyframes animatedSprite-#{$name} {
+      @for $i from 0 through $sprite-cell_count {
+        #{$i * (100% / $sprite-cell_count)} {
+          background-position: (-100% * $i) 50%;
+        }
+      }
+    }
+  }
+
+  $sprite-height: 111;
+  $sprite-width: 86;
+
+  $jeff_list: (idle, 2, 500ms, '../assets/img/jeff/idle.gif')
+    (waving, 4, 1000ms, '../assets/img/jeff/waving.gif')
+    (jumping, 14, 2000ms, '../assets/img/jeff/jumping.gif');
+
+  @each $name, $animationsteps, $speed, $url in $jeff_list {
+    @include sprite(
+      $name,
+      $sprite-height,
+      $sprite-width,
+      $animationsteps,
+      $speed,
+      $url
+    );
+  }
+}

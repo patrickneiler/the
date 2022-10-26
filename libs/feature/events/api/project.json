@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/events/api",
+  "sourceRoot": "libs/feature/events/api/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/events/api/src/**/*.ts",
+          "libs/feature/events/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["api"]
+}

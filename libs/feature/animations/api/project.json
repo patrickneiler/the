@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/animations/api",
+  "sourceRoot": "libs/feature/animations/api/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/animations/api"],
+      "options": {
+        "jestConfig": "libs/feature/animations/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/animations/api/src/**/*.ts",
+          "libs/feature/animations/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["api"]
+}

@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Entity, I<%= className %>Fields, IFacade } from '@the/utility/models';
+
+import * as <%= className %>Actions from './<%= name %>.actions';
+import * as <%= className %>Selectors from './<%= name %>.selectors';
+import { <%= className %> } from './<%= name %>.reducer';
+import { State } from '@the/feature/artists/api';
+
+@Injectable()
+export class <%= className %>Facade implements IFacade<<%= className %>> {
+  /**
+   * Combine pieces of state using createSelector,
+   * and expose them as observables through the facade.
+   */
+  loaded$ = this.store.pipe(select(<%= className %>Selectors.getLoaded));
+  all$ = this.store.pipe(select(<%= className %>Selectors.getAll));
+  selected$ = this.store.pipe(select(<%= className %>Selectors.getSelected));
+
+  constructor(private readonly store: Store<State>) {}
+
+  /**
+   * Use the initialization action to perform one
+   * or more tasks in your Effects.
+   */
+  init() {
+    this.store.dispatch(<%= className %>Actions.init());
+  }
+
+  load() {
+    this.store.dispatch(<%= className %>Actions.load<%= className %>s());
+  }
+
+  add() {
+    this.store.dispatch(<%= className %>Actions.add<%= className %>s());
+  }
+
+  select(id: string) {
+    this.store.dispatch(<%= className %>Actions.select<%= className %>s({ id }));
+  }
+}

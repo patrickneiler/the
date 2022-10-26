@@ -1,0 +1,19 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as from<%= className %> from './+state/<%= name %>.reducer';
+import { <%= className %>Effects } from './+state/<%= name %>.effects';
+import { <%= className %>Facade } from './+state/<%= name %>.facade';
+import { FeatureFormsModule } from '@the/feature/forms';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FeatureFormsModule,
+    StoreModule.forFeature(from<%= className %>.<%= constantName %>_FEATURE_KEY, from<%= className %>.reducer),
+    EffectsModule.forFeature([<%= className %>Effects]),
+  ],
+  providers: [<%= className %>Facade],
+})
+export class Feature<%= className %>sApiModule {}

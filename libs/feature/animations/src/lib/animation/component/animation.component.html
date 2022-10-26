@@ -1,0 +1,16 @@
+<div
+  [theAnimation]
+  [totalFrames]="totalFrames"
+  [width]="width"
+  [loop]="loop"
+  (finished)="finished.emit()"
+  [style.height.px]="height"
+  [style.width.px]="width"
+  class="the-scene"
+>
+  <img
+    [style.width.px]="totalWidth"
+    [style.height.px]="height"
+    [src]="imageSrc"
+  />
+</div>

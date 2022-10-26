@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { catchError, map, switchMap, take } from 'rxjs/operators';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { <%= className %>Facade } from '@the/feature/<%= name %>s/api';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class <%= className %>Guard implements CanActivate {
+  constructor(private readonly <%= name %>s: <%= className %>Facade) {}
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    this.<%= name %>s.init();
+    return this.<%= name %>s.loaded$;
+  }
+}

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ng-container *ngIf="entity$ | async as entity">
+      <ion-buttons slot="start">
+        <ion-back-button [defaultHref]="'/' + entity['name']"></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ entity['name'] }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="add()">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ng-container>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <router-outlet></router-outlet>
+</ion-content>

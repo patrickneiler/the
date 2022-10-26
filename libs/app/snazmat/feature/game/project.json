@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/app/snazmat/feature/game",
+  "sourceRoot": "libs/app/snazmat/feature/game/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app/snazmat/feature/game/src/**/*.ts",
+          "libs/app/snazmat/feature/game/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

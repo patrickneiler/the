@@ -1,0 +1,7 @@
+{
+  "name": "snazmat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "tourbo",
+  "devDependencies": {
+    "@capacitor/cli": "^3.2.5"
+  }
+}

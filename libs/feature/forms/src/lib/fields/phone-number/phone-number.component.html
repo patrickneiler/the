@@ -1,0 +1,17 @@
+<ion-item color="clear" lines="none" [formGroup]="group" [style.flexGrow]="field?.attrs?.flex || 1" >
+  <ion-label position="stacked">{{field?.attrs?.label}}</ion-label>
+  <ion-input
+    #phone
+    color="medium"
+    [style.fontSize.px]="field?.attrs?.size"
+    [formControlName]="field?.name!"
+    [reg]="field?.attrs?.mask"
+    [attr.mask]="field?.attrs?.mask"
+    [attr.placeholder]="field?.placeholder"
+    [attr.type]="field?.attrs?.type || 'text'"
+    [attr.readonly]="field?.attrs?.readonly || false"
+    [attr.disabled]="field?.attrs?.disabled || false"
+    [attr.readonly]="field?.attrs?.readonly || false"
+    [attr.disabled]="field?.attrs?.disabled || false"
+  ></ion-input>
+</ion-item>

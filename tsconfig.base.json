@@ -1,0 +1,63 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@the/app/api": ["libs/app/api/src/index.ts"],
+      "@the/app/shell": ["libs/app/shell/src/index.ts"],
+      "@the/app/snazmat/feature/game": [
+        "libs/app/snazmat/feature/game/src/index.ts"
+      ],
+      "@the/app/snazmat/feature/shell": [
+        "libs/app/snazmat/feature/shell/src/index.ts"
+      ],
+      "@the/app/tourbo/feature/shell": [
+        "libs/app/tourbo/feature/shell/src/index.ts"
+      ],
+      "@the/feature/accounts": ["libs/feature/accounts/shell/src/index.ts"],
+      "@the/feature/accounts/api": ["libs/feature/accounts/api/src/index.ts"],
+      "@the/feature/accounts/login": [
+        "libs/feature/accounts/login/src/index.ts"
+      ],
+      "@the/feature/accounts/register": [
+        "libs/feature/accounts/register/src/index.ts"
+      ],
+      "@the/feature/accounts/shell": [
+        "libs/feature/accounts/shell/src/index.ts"
+      ],
+      "@the/feature/accounts/status": [
+        "libs/feature/accounts/status/src/index.ts"
+      ],
+      "@the/feature/animations": ["libs/feature/animations/src/index.ts"],
+      "@the/feature/animations/api": [
+        "libs/feature/animations/api/src/index.ts"
+      ],
+      "@the/feature/artists/api": ["libs/feature/artists/api/src/index.ts"],
+      "@the/feature/artists/shell": ["libs/feature/artists/shell/src/index.ts"],
+      "@the/feature/entity/add": ["libs/feature/entity/add/src/index.ts"],
+      "@the/feature/entity/list": ["libs/feature/entity/list/src/index.ts"],
+      "@the/feature/entity/shell": ["libs/feature/entity/shell/src/index.ts"],
+      "@the/feature/entity/view": ["libs/feature/entity/view/src/index.ts"],
+      "@the/feature/events/api": ["libs/feature/events/api/src/index.ts"],
+      "@the/feature/events/shell": ["libs/feature/events/shell/src/index.ts"],
+      "@the/feature/forms": ["libs/feature/forms/src/index.ts"],
+      "@the/ui": ["libs/ui/src/index.ts"],
+      "@the/utility/firebase": ["libs/utility/firebase/src/index.ts"],
+      "@the/utility/models": ["libs/utility/models/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

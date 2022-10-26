@@ -1,0 +1,31 @@
+<the-animation
+  [class.playing]="state === 'idle'"
+  imageUrl="assets/img/jeff/idle.gif"
+  [width]="86"
+  [height]="111"
+  [totalFrames]="2"
+  (mouseover)="state = 'waving'"
+  [loop]="0"
+></the-animation>
+<ng-container *ngIf="state === 'jumping' || state === 'waving'">
+  <the-animation
+    [class.playing]="state === 'waving'"
+    imageUrl="assets/img/jeff/waving.gif"
+    [width]="86"
+    [height]="111"
+    [totalFrames]="4"
+    (mouseout)="hover($event)"
+    (click)="handle($event)"
+    [loop]="0"
+  ></the-animation>
+
+  <the-animation
+    [class.playing]="state === 'jumping'"
+    imageUrl="assets/img/jeff/jumping.gif"
+    [width]="86"
+    [height]="111"
+    [totalFrames]="14"
+    [loop]="1"
+    (finished)="state = 'waving'"
+  ></the-animation>
+</ng-container>

@@ -1,0 +1,27 @@
+import { createAction, props } from '@ngrx/store';
+import { Entity, I<%= className %>Fields } from '@the/utility/models';
+import { <%= className %>Entity } from './<%= name %>.models';
+import { <%= className %> } from './<%= name %>.reducer';
+
+export const init = createAction('[<%= className %>/API] Initialize <%= className %>s');
+
+export const load<%= className %>s = createAction('[<%= className %>/API] Load <%= className %>s');
+
+export const load<%= className %>sSuccess = createAction(
+  '[<%= className %>/API] Load <%= className %>s Success',
+  props<{ <%= name %>s: <%= className %>[] | [] }>()
+);
+
+export const load<%= className %>sFailure = createAction(
+  '[<%= className %>/API] Load <%= className %>s Failure',
+  props<{ error: any }>()
+);
+
+export const add<%= className %>s = createAction('[<%= className %>/API] Add <%= className %>s');
+
+export const add<%= className %>sSuccess = createAction('[<%= className %>/API] Add <%= className %>s Success');
+
+export const add<%= className %>sFailure = createAction(
+  '[<%= className %>/API] Load <%= className %>s Failure',
+  props<{ error: any }>()
+);

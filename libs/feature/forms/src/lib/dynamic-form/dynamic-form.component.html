@@ -1,0 +1,11 @@
+<ion-item-group>
+  <form [class.horizontal]="horizontal" [formGroup]="form" autocomplete="off">
+    <ng-container
+      *ngFor="let field of structure$ | async"
+      theFormField
+      [field]="field"
+      [group]="form"
+    >
+    </ng-container>
+  </form>
+</ion-item-group>

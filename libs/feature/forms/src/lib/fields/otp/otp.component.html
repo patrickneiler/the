@@ -1,0 +1,11 @@
+<div class="otp-group" [formGroup]="group">
+   <ng-otp-input
+   [style.flexGrow]="field?.attrs?.flex || 1"
+    *ngIf="field?.attrs"
+    [formCtrl]="control"
+    [attr.type]="field?.attrs?.type || 'text'"
+    [attr.readonly]="field?.attrs?.readonly || false"
+    [attr.disabled]="field?.attrs?.disabled || false"
+    [config]="field.attrs['config']">
+  </ng-otp-input>
+</div>

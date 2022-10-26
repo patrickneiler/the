@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/app/api",
+  "sourceRoot": "libs/app/api/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app/api/src/**/*.ts",
+          "libs/app/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["api"]
+}

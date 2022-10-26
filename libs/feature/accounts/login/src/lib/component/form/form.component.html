@@ -1,0 +1,11 @@
+<the-form
+  [horizontal]="false"
+  (updateForm)="updateForm($event)"
+  [data$]="ngrxFormsFacade.data$"
+  [structure$]="ngrxFormsFacade.structure$"
+  [title]="'Enter Password'"
+>
+</the-form>
+<ion-item>
+  <ion-button (click)="accounts.login()">Login</ion-button>
+</ion-item>

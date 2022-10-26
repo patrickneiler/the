@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-grow: 1;
+}
+
+ion-item {
+  border-radius: 20px;
+}
+
+ion-label {
+  --padding-start: 16px;
+  padding-left: var(--padding-start);
+}
+
+ion-input,
+.ion-color.sc-ion-input-ios-h {
+  border-radius: 20px;
+  flex-shrink: 0;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --background: var(--ion-color-medium);
+  color: var(--ion-color-medium-contrast);
+}

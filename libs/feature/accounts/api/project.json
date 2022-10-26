@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/accounts/api",
+  "sourceRoot": "libs/feature/accounts/api/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/accounts/api"],
+      "options": {
+        "jestConfig": "libs/feature/accounts/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/accounts/api/src/**/*.ts",
+          "libs/feature/accounts/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["api"]
+}

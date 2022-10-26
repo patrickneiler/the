@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/app/shell",
+  "sourceRoot": "libs/app/shell/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app/shell/src/**/*.ts",
+          "libs/app/shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["app"]
+}

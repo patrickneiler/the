@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/utility/firebase",
+  "sourceRoot": "libs/utility/firebase/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/utility/firebase"],
+      "options": {
+        "jestConfig": "libs/utility/firebase/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/utility/firebase/src/**/*.ts",
+          "libs/utility/firebase/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

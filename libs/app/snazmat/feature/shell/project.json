@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/app/snazmat/feature/shell",
+  "sourceRoot": "libs/app/snazmat/feature/shell/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app/snazmat/feature/shell/src/**/*.ts",
+          "libs/app/snazmat/feature/shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["app"]
+}

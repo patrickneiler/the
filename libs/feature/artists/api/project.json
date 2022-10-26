@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/artists/api",
+  "sourceRoot": "libs/feature/artists/api/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/artists/api"],
+      "options": {
+        "jestConfig": "libs/feature/artists/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/artists/api/src/**/*.ts",
+          "libs/feature/artists/api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["api"]
+}

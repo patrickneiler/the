@@ -1,0 +1,16 @@
+<ion-list>
+  <ng-container *ngIf="entities.loaded$ | async; else loading">
+    <ion-item *ngFor="let item of entities.all$ | async">
+      <ng-container *ngIf="item; else loading">
+        <ion-label>{{ item['name'] }}</ion-label>
+      </ng-container>
+    </ion-item>
+  </ng-container>
+</ion-list>
+<ng-template #loading>
+  <ion-item>
+    <ion-label>
+      <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+    </ion-label>
+  </ion-item>
+</ng-template>

@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "projects": {
+    "app-api": "libs/app/api",
+    "app-shell": "libs/app/shell",
+    "app-snazmat-feature-game": "libs/app/snazmat/feature/game",
+    "app-snazmat-feature-shell": "libs/app/snazmat/feature/shell",
+    "app-tourbo-feature-shell": "libs/app/tourbo/feature/shell",
+    "feature-accounts-api": "libs/feature/accounts/api",
+    "feature-accounts-login": "libs/feature/accounts/login",
+    "feature-accounts-register": "libs/feature/accounts/register",
+    "feature-accounts-shell": "libs/feature/accounts/shell",
+    "feature-accounts-status": "libs/feature/accounts/status",
+    "feature-animations": "libs/feature/animations",
+    "feature-animations-api": "libs/feature/animations/api",
+    "feature-artists-api": "libs/feature/artists/api",
+    "feature-artists-shell": "libs/feature/artists/shell",
+    "feature-entity-add": "libs/feature/entity/add",
+    "feature-entity-list": "libs/feature/entity/list",
+    "feature-entity-shell": "libs/feature/entity/shell",
+    "feature-entity-view": "libs/feature/entity/view",
+    "feature-events-api": "libs/feature/events/api",
+    "feature-events-shell": "libs/feature/events/shell",
+    "feature-forms": "libs/feature/forms",
+    "snazmat": "apps/snazmat",
+    "tourbo": "apps/tourbo",
+    "tourbo-e2e": "apps/tourbo-e2e",
+    "ui": "libs/ui",
+    "utility-firebase": "libs/utility/firebase",
+    "utility-models": "libs/utility/models"
+  }
+}

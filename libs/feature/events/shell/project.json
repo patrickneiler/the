@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/events/shell",
+  "sourceRoot": "libs/feature/events/shell/src",
+  "prefix": "the",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/events/shell/src/**/*.ts",
+          "libs/feature/events/shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

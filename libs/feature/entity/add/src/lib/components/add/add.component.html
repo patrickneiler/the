@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<the-form
+  [horizontal]="false"
+  (updateForm)="updateForm($event)"
+  [data$]="form.data$"
+  [structure$]="form.structure$"
+  [title]="'Enter Password'"
+>
+</the-form>
+<ion-item>
+  <ion-button (click)="entities.add()"
+    >Add
+    <ng-container *ngIf="(entities.loaded$ | async) === false"
+      ><ion-spinner></ion-spinner></ng-container
+  ></ion-button>
+</ion-item>

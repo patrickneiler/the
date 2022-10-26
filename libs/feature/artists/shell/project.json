@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/artists/shell",
+  "sourceRoot": "libs/feature/artists/shell/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/artists/shell"],
+      "options": {
+        "jestConfig": "libs/feature/artists/shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/artists/shell/src/**/*.ts",
+          "libs/feature/artists/shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

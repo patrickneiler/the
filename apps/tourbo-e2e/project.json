@@ -1,0 +1,28 @@
+{
+  "root": "apps/tourbo-e2e",
+  "sourceRoot": "apps/tourbo-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/tourbo-e2e/cypress.json",
+        "devServerTarget": "tourbo:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "tourbo:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/tourbo-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["tourbo"]
+}

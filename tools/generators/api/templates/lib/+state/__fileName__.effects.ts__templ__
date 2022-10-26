@@ -1,0 +1,78 @@
+import { Injectable } from '@angular/core';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
+import { NgrxFormsFacade } from '@the/feature/forms';
+import { Entity, I<%= className %>Fields } from '@the/utility/models';
+import { FirestoreService } from '@the/utility/firebase';
+import { catchError, from, map, of, switchMap, withLatestFrom } from 'rxjs';
+
+import * as <%= className %>Actions from './<%= fileName %>.actions';
+import * as <%= className %>Feature from './/<%= fileName %>.reducer';
+import { Router } from '@angular/router';
+
+@Injectable()
+export class <%= className %>Effects {
+  load<%= className %>s$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(<%= className %>Actions.load<%= className %>s),
+      switchMap(() =>
+        this.firestore.getAll<Entity<I<%= className %>Fields>>('<%= name %>s').pipe(
+          map((<%= name %>s) =>
+            <%= name %>s
+              .filter((<%= name %>) => <%= name %>['id'])
+              .map((<%= name %>) => {
+                return new Entity<I<%= className %>Fields>(<%= name %>) as <%= className %>Feature.<%= className %>;
+              })
+          ),
+          map((<%= name %>s) => <%= className %>Actions.load<%= className %>sSuccess({ <%= name %>s: <%= name %>s }))
+        )
+      ),
+      catchError((error) => of(<%= className %>Actions.load<%= className %>sFailure({ error })))
+    )
+  );
+
+  add<%= className %>s$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(<%= className %>Actions.add<%= className %>s),
+      withLatestFrom(this.form$.data$),
+      switchMap(([<%= name %>s, form]) =>
+        from(
+          this.firestore
+            .create('<%= name %>s', { name: form['name'] })
+            .then((ref) =>
+              ref
+                .get()
+                .then((doc) =>
+                  ref
+                    .update({ ...doc.data, id: doc.id })
+                    .then(
+                      () => (
+                        this.router.navigateByUrl('/<%= name %>s'),
+                        <%= className %>Actions.add<%= className %>sSuccess()
+                      )
+                    )
+                )
+            )
+            .catch((error) => <%= className %>Actions.load<%= className %>sFailure({ error }))
+        )
+      ),
+      catchError((error) => of(<%= className %>Actions.load<%= className %>sFailure({ error })))
+    )
+  );
+
+  select<%= className %>s$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(EventActions.select<%= className %>s),
+      switchMap((payload) => {
+        return of(EventActions.select<%= className %>sSuccess({ id: payload.id }));
+      }),
+      catchError((error) => of(EventActions.select<%= className %>sFailure({ error })))
+    )
+  );
+
+  constructor(
+    private readonly actions$: Actions,
+    private form$: NgrxFormsFacade,
+    private firestore: FirestoreService,
+    private router: Router
+  ) {}
+}

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/app/tourbo/feature/shell",
+  "sourceRoot": "libs/app/tourbo/feature/shell/src",
+  "prefix": "the",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/app/tourbo/feature/shell"],
+      "options": {
+        "jestConfig": "libs/app/tourbo/feature/shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app/tourbo/feature/shell/src/**/*.ts",
+          "libs/app/tourbo/feature/shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["feature"]
+}

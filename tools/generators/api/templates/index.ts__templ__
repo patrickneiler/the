@@ -1,0 +1,12 @@
+import * as <%= className %>Actions from './lib/+state/<%= name %>.actions';
+
+import * as <%= className %>Feature from './lib/+state/<%= name %>.reducer';
+
+import * as <%= className %>Selectors from './lib/+state/<%= name %>.selectors';
+
+export * from './lib/+state/<%= name %>.facade';
+
+export * from './lib/+state/<%= name %>.models';
+
+export { <%= className %>Actions, <%= className %>Feature, <%= className %>Selectors };
+export * from './lib/feature-<%= name %>s-api.module';
